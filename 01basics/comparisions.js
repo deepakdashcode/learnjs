@@ -11,5 +11,12 @@ console.log(null === 0);
 
 /*
 Comparisons convert the values whereas equals do not
+== checks only value
+=== checks value with type
 */
 
+console.log(undefined === undefined); // fasle
+console.log(undefined == 'undefined'); // false as well
+
+console.log(2 == '2'); // true
+console.log(2 === '2'); // false
