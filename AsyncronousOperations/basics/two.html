@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: blanchedalmond;
+        }
+        button{
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Code with Dk</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <h1 id="display">Result</h1>
+</body>
+<script>
+    const title = document.querySelector('#title')
+    const startBtn = document.querySelector('#start')
+    const stopBtn = document.querySelector('#stop')
+    const result = document.querySelector('#display')
+
+    let num = 0
+    let stopWatchEvent;
+    start.addEventListener('click', (event)=>{
+        stopWatchEvent = setInterval(()=>{
+            result.innerHTML = num++
+        },1000)
+        console.log('Started Interval with id', stopWatchEvent);
+        
+        
+    })
+    stopBtn.addEventListener('click', (event)=>{
+        console.log('Stopping Interval with id', stopWatchEvent);
+        clearInterval(stopWatchEvent)
+    })
+
+</script>
+</html>

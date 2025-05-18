@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DOM with Chai</title>
+</head>
+<body class="bg-black">
+
+</body>
+<script>
+    const div = document.createElement('div')
+    div.className = 'main'
+    div.id = 'myid'
+    div.appendChild(document.createTextNode('Hii'))
+    document.body.appendChild(div)
+    console.log(div);
+    
+</script>
+</html>

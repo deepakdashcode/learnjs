@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: blanchedalmond;
+        }
+        button{
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 20px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let r = 0, g = 0, b = 0;
+    const startBtn = document.querySelector('#start')
+    const stopBtn = document.querySelector('#stop')
+    stopBtn.disabled = true
+    let changeBackgroundEvent = null;
+    function generateRandom(){
+        let low = 0, high = 255;
+        return Math.floor(Math.random() * (high - low + 1)) + low
+    }
+    
+
+    startBtn.addEventListener('click', (event)=>{
+        console.log('Clicked Start');
+        startBtn.disabled = true
+        stopBtn.disabled = false
+
+        if(!changeBackgroundEvent)
+        {
+            changeBackgroundEvent = setInterval(()=>{
+            r = generateRandom()
+            g = generateRandom()
+            b = generateRandom()
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        }, 1000)
+        }
+        
+    })
+    stopBtn.addEventListener('click', (event)=>{
+        console.log('Clicked Stop');
+        clearInterval(changeBackgroundEvent)
+        startBtn.disabled = false
+        stopBtn.disabled = true
+        changeBackgroundEvent = null
+
+    })
+    
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: blanchedalmond;
+        }
+        button{
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Code with Dk</h1>
+    <button id="change">Change Title</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const title = document.querySelector('#title')
+    const changeBtn = document.querySelector('#change')
+    const stopBtn = document.querySelector('#stop')
+
+
+    let changeTitleEvent;
+    changeBtn.addEventListener('click', (event)=>{
+        changeTitleEvent = setTimeout(()=>{
+            title.innerHTML = "Hii"
+        }, 3000)
+    })
+    stopBtn.addEventListener('click', (event)=>{
+        console.log('Stopping Timeout with id', changeTitleEvent);
+        clearTimeout(changeTitleEvent)
+    })
+
+</script>
+</html>

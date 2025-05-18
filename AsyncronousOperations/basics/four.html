@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: blanchedalmond;
+        }
+        button{
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 20px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="result"></h1>
+</body>
+<script>
+    const result = document.querySelector('#result')
+
+    window.addEventListener('keydown', (event)=>{
+        result.innerHTML = `
+    Key is ${event.key}
+    <br>
+    Keycode is ${event.keyCode}
+    <br>
+    Code is ${event.code}
+        `
+        console.log(event.key);
+    })
+    
+</script>
+</html>

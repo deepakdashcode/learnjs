@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    color: aliceblue;
+}
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}

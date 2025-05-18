@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DOM with Chai</title>
+</head>
+<body class="bg-black">
+    <div class="parent">
+        <div class="day">Days of Week</div>
+        <div class="day">Monday</div><div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+        <div class="day">Friday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    const children = Array.from(parent.children)
+    children.forEach((item)=>{
+        item.style.padding = "15px";
+        item.style.backgroundColor = 'blue';
+        item.style.margin = '2px'
+        item.style.border = "5px solid green"
+    })
+</script>
+</html>
